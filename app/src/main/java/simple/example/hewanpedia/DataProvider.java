@@ -8,6 +8,7 @@ import java.util.List;
 import simple.example.hewanpedia.model.Anjing;
 import simple.example.hewanpedia.model.Hewan;
 import simple.example.hewanpedia.model.Kucing;
+import simple.example.hewanpedia.model.Ayam;
 
 public class DataProvider {
     private static List<Hewan> hewans = new ArrayList<>();
@@ -45,10 +46,28 @@ public class DataProvider {
                 "Anjing dari daerah Shiba ini gesit dan lincah sehingga awalnya banyak digunakan untuk berburu ", R.drawable.dog_shiba));
         return anjings;
     }
+    private static List<Ayam> initDataAyam(Context ctx) {
+        List<Ayam> ayams = new ArrayList<>();
+        ayams.add(new Ayam("balenggek", "ranah minang",
+                "ayam populer yang Biasa disebut ayam kukuak balenggek, dan tubuh brotot", R.drawable.ayam_belengek));
+        ayams.add(new Ayam("cemani", "indonesia",
+                "Ayam Cemani berasal dari bahasa Sansekerta yang artinya “hitam legam”. Ya, sesuai dengan seluruh warna yang melingkupi tubuh", R.drawable.ayam_cemani));
+        ayams.add(new Ayam("Kapas", "Indonesia",
+                "Ayam yang termasuk kedalam 10 Jenis Ayam Hias Populer dan Terbaik di Indonesia. Ayam Silkie Hen atau ayam kapas ini memiliki bulu halus dan megar layaknya kucing Angora", R.drawable.ayam_kapas));
+        ayams.add(new Ayam("leghorn", "italia",
+                "leghorn Berasal dari italia, ayam ini pun cocok tinggal di daerah tropis dan ayam betinanya amat produktif menghasilkan telur", R.drawable.ayam_leghorn));
+        ayams.add(new Ayam("onagadori", "Jepang",
+                "Ayam ekor panjang onagadori, ayam ini tampak anggun layaknya seekor merak", R.drawable.ayam_onagadori));
+        ayams.add(new Ayam("Serama", "malaysia",
+                "Bulu panjang dan pose tubuh yang fabulous, bikin ayam ini instagrammable banget ", R.drawable.ayam_serama));
+        return ayams;
+    }
 
-    private static void initAllHewans(Context ctx) {
+        private static void initAllHewans(Context ctx) {
         hewans.addAll(initDataKucing(ctx));
         hewans.addAll(initDataAnjing(ctx));
+        hewans.addAll(initDataAyam(ctx));
+
     }
 
     public static List<Hewan> getAllHewan(Context ctx) {
